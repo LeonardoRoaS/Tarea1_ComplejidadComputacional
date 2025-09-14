@@ -24,15 +24,25 @@ public class ArrayDinamico {
             System.out.println("El array está vacío.");
             return;
         }
-        System.out.println("[");
+        System.out.print("[");
         for (int i = 0; i < tamano; i++){
-            System.out.println(datos[i]);
+            System.out.print(datos[i]);
+            if (i < (tamano-1)){
+                System.out.print(", ");
+            }
         }
-        System.out.println("]");
+        System.out.print("]");
+    }
+
+    public void insertarValor(int valor){
+        datos[tamano] = valor;
+        tamano++;
     }
 
     public static void main(String[] args) {
         ArrayDinamico array = new ArrayDinamico(10);
+        array.insertarValor(2);
+        array.insertarValor(1);
         array.mostrarArray();
     }
 }
