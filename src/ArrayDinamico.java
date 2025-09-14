@@ -55,6 +55,13 @@ public class ArrayDinamico {
         tamano--;
     }
 
+    public int obtenerValorIndice(int indice){
+        if (indice < 0 || indice >= tamano){
+            throw new ArrayIndexOutOfBoundsException("El indice está fuera del rango.");
+        }
+        return datos[indice];
+    }
+
     public static void main(String[] args) {
         ArrayDinamico array = new ArrayDinamico(2);
         array.insertarValor(2);
@@ -64,5 +71,9 @@ public class ArrayDinamico {
 
         array.eliminarUltimoValor();
         array.mostrarArray();
+
+        System.out.println("Obtener el valor del índice 0: "+ array.obtenerValorIndice(0));
+        System.out.println("Obtener el valor del índice 1: "+ array.obtenerValorIndice(1));
+        System.out.println("Obtener el valor del índice 5: "+ array.obtenerValorIndice(5));
     }
 }
