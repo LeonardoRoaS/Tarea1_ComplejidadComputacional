@@ -19,9 +19,20 @@ public class ArrayDinamico {
         return tamano;
     }
 
+    public void mostrarArray(){
+        if (tamano == 0){
+            System.out.println("El array está vacío.");
+            return;
+        }
+        System.out.println("[");
+        for (int i = 0; i < tamano; i++){
+            System.out.println(datos[i]);
+        }
+        System.out.println("]");
+    }
 
     public static void main(String[] args) {
         ArrayDinamico array = new ArrayDinamico(10);
-        
+        array.mostrarArray();
     }
 }
