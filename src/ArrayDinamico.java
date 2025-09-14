@@ -31,18 +31,38 @@ public class ArrayDinamico {
                 System.out.print(", ");
             }
         }
-        System.out.print("]");
+        System.out.println("]");
     }
 
     public void insertarValor(int valor){
+        if (tamano == capacidadMaxima){
+            redimensionar();
+        }
         datos[tamano] = valor;
         tamano++;
     }
 
+    public void redimensionar(){
+        capacidadMaxima *= 2;
+        int[] nuevosDatos = new int[capacidadMaxima];
+        for (int i = 0; i < tamano; i++){
+            nuevosDatos[i] = datos[i];
+        }
+        datos = nuevosDatos;
+    }
+
+    public void eliminarUltimoValor(){
+        tamano--;
+    }
+
     public static void main(String[] args) {
-        ArrayDinamico array = new ArrayDinamico(10);
+        ArrayDinamico array = new ArrayDinamico(2);
         array.insertarValor(2);
         array.insertarValor(1);
+        array.insertarValor(3);
+        array.mostrarArray();
+
+        array.eliminarUltimoValor();
         array.mostrarArray();
     }
 }
