@@ -72,8 +72,14 @@ public class ArrayDinamico {
         array.eliminarUltimoValor();
         array.mostrarArray();
 
+        array.insertarValor(999);
+        array.insertarValor(3);
+        array.mostrarArray();
         System.out.println("Obtener el valor del índice 0: "+ array.obtenerValorIndice(0));
-        System.out.println("Obtener el valor del índice 1: "+ array.obtenerValorIndice(1));
-        System.out.println("Obtener el valor del índice 5: "+ array.obtenerValorIndice(5));
+        System.out.println("Obtener el valor del índice 2: "+ array.obtenerValorIndice(2));
+        //System.out.println("Obtener el valor del índice 10: "+ array.obtenerValorIndice(10));
+
+        System.out.println("Tamaño: "+ array.getTamano());
+        System.out.println("Capacidad Máxima: "+ array.getCapacidadMaxima());
     }
 }
